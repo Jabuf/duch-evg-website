@@ -1,78 +1,63 @@
 <template>
-  <nav
-      class="top-0 left-0 right-0 fixed flex bg-white border-b z-30 w-screen
-    transition-position xl:pl-10 lg:w-auto lg:items-stretch"
-  >
-    <div class="flex-1 items-stretch flex h-14">
-      <nav-bar-item
-          type="hidden lg:flex xl:hidden"
-      />
-      <nav-bar-item
-          type="hidden lg:flex"
-      >
-        <a href="/">
-          <img alt="Duch"
-               class="object-contain h-12"
-               src="/logo.png"
-          >
-        </a>
-      </nav-bar-item>
-    </div>
-    <div class="flex items-center justify-center w-full text-2xl text-primary-700 font-extrabold">
-      DUCH
-    </div>
-    <div class="flex-none items-stretch flex h-14 lg:hidden">
-      <nav-bar-item @click.prevent="menuNavBarToggle">
-        <UIcon
-            :path="menuNavBarToggleIcon"
-            size="24"
-        />
-      </nav-bar-item>
-    </div>
-    <div
-        :class="[isMenuNavBarActive ? 'block' : 'hidden']"
-        class="absolute w-screen top-14 left-0 bg-white shadow inline
-        lg:w-auto lg:items-stretch lg:flex lg:grow lg:static lg:border-b-0 lg:overflow-visible lg:shadow-none"
-    >
-      <div class="flex">
-        <div class="my-auto text-xl">
-
+  <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <DisclosureButton
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <span class="sr-only">Open main menu</span>
+            <MenuIcon v-if="!open" class="block h-6 w-6" aria-hidden="true"/>
+            <XIcon v-else class="block h-6 w-6" aria-hidden="true"/>
+          </DisclosureButton>
+        </div>
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex-shrink-0 flex items-center">
+            <a href="./">
+              <img class="block lg:hidden h-8 w-auto" src="/logo.png"
+                   alt="Workflow"/>
+              <img class="hidden lg:block h-8 w-auto"
+                   src="/logo.png" alt="Workflow"/>
+            </a>
+          </div>
+          <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-4">
+              <a v-for="item in navigation" :key="item.name" :href="item.href"
+                 @click="setCurrent(item.href)"
+                 :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']"
+                 :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div
-          class="max-h-screen-menu overflow-y-auto lg:overflow-visible lg:flex lg:items-stretch lg:justify-end lg:ml-auto"
-      >
-        <nav-bar-item
-            :href="gitHubUrl"
-            is-desktop-icon-only
-            target="_blank"
-        >
-          <nav-bar-item-label
-              :icon="mdiGithub"
-              is-desktop-icon-only
-              label="GitHub"
-          />
-        </nav-bar-item>
-      </div>
     </div>
-  </nav>
+    <DisclosurePanel class="sm:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href"
+                          @click="setCurrent(item.href)"
+                          :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']"
+                          :aria-current="item.current ? 'page' : undefined">{{ item.name }}
+        </DisclosureButton>
+      </div>
+    </DisclosurePanel>
+  </Disclosure>
 </template>
 
 <script setup>
-import {computed, ref} from 'vue'
-import {mdiClose, mdiDotsVertical, mdiGithub} from '@mdi/js'
-import NavBarItem from '@/components/section/NavBarItem.vue'
-import NavBarItemLabel from '@/components/section/NavBarItemLabel.vue'
-import UIcon from '@/components/basic/UIcon.vue'
+import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue'
+import {MenuIcon, XIcon} from '@heroicons/vue/outline'
 
-const isMenuNavBarActive = ref(false)
+const navigation = [
+  {name: 'Accueil', href: '/', current: true},
+  {name: 'Photos', href: '/photos', current: false},
+  {name: 'Boyage', href: '/boyage', current: false},
+  {name: 'L\'équipe', href: '/equipe', current: false}
+]
 
-const menuNavBarToggleIcon = computed(() => isMenuNavBarActive.value ? mdiClose : mdiDotsVertical)
+setCurrent(window.location.pathname)
 
-const menuNavBarToggle = () => {
-  isMenuNavBarActive.value = !isMenuNavBarActive.value
+function setCurrent(href) {
+  navigation.forEach(e => e.current = (e.href === href))
 }
-
-const gitHubUrl = process.env.VUE_APP_URL_GITHUB_DUCH
 
 </script>
