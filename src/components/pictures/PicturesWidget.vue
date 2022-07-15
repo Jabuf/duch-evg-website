@@ -4,7 +4,7 @@
 
 <script setup>
 import {onMounted, reactive} from 'vue'
-import PictureWidget from '@/components/PictureWidget.vue'
+import PictureWidget from '@/components/pictures/PictureWidget.vue'
 import {getRandomNumberString} from '@/utils/math.js'
 
 const state = reactive({pictureNumber: getRandomNumberString(1, 5)})

@@ -5,4 +5,4 @@
 </template>
 
 <script setup>
-import PicturesWidget from '@/components/PicturesWidget.vue'</script>
+import PicturesWidget from '@/components/pictures/PicturesWidget.vue'</script>
