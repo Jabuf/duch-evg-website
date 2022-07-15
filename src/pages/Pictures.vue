@@ -1,7 +1,8 @@
 <template>
   <section>
-    pictures
+    <PicturesWidget/>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import PicturesWidget from '@/components/PicturesWidget.vue'</script>
