@@ -51,7 +51,10 @@ const config = {
             weight: 'bold',
             size: 14
           }
-        }
+        },
+        beginAtZero: true,
+        suggestedMin: 0,
+        suggestedMax: 5
       }
     },
     plugins: {
