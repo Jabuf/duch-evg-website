@@ -1,7 +1,7 @@
 /* GENERAL GRID STYLE */
 
 li.u-grid {
-    @apply bg-gray-50 rounded-lg border-2 px-5 text-sm border-gray-200;
+    @apply bg-gray-50 rounded-lg border-2 px-5 text-sm border-gray-800;
 }
 
 ul.u-grid {
@@ -9,5 +9,5 @@ ul.u-grid {
 }
 
 li.u-grid:hover {
-    @apply bg-gray-100;
+    @apply bg-gray-200 cursor-pointer;
 }
