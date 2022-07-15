@@ -22,10 +22,11 @@
           </div>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
-              <router-link v-for="item in navigation" :key="item.name" :aria-current="item.current ? 'page' : undefined"
+              <router-link v-for="item in state.navigation" :key="item.name"
+                           :aria-current="item.current ? 'page' : undefined"
                            :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']"
                            :to="item"
-                           @click="setCurrent(item.href)">{{ item.name }}
+                           @click="setCurrent(item.name)">{{ item.name }}
               </router-link>
             </div>
           </div>
@@ -34,17 +35,22 @@
     </div>
     <DisclosurePanel class="sm:hidden bg-white">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <router-link v-for="item in navigation" :key="item.name" :aria-current="item.current ? 'page' : undefined"
-                     :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']"
-                     :to="item"
-                     @click="setCurrent(item.href)">{{ item.name }}
-        </router-link>
+        <DisclosureButton
+            v-for="item in state.navigation" :key="item.name"
+            :aria-current="item.current ? 'page' : undefined"
+            :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']"
+        >
+          <router-link :to="item"
+                       @click="setCurrent(item.name)">{{ item.name }}
+          </router-link>
+        </DisclosureButton>
       </div>
     </DisclosurePanel>
   </Disclosure>
 </template>
 
 <script setup>
+import {reactive} from 'vue'
 import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue'
 import {MenuIcon, XIcon} from '@heroicons/vue/outline'
 
@@ -55,10 +61,10 @@ const navigation = [
   {label: 'L\'équipe', name: 'Team', current: false}
 ]
 
-setCurrent(window.location.pathname)
+const state = reactive({navigation})
 
-function setCurrent(href) {
-  navigation.forEach(e => e.current = (e.href === href))
+function setCurrent(name) {
+  state.navigation.forEach(e => e.current = (e.name === name))
 }
 
 </script>
