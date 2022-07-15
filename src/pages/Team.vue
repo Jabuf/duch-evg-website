@@ -1,7 +1,6 @@
 <template>
-  <section>
-    equipe
-  </section>
+  <Players/>
 </template>
 
-<script setup></script>
+<script setup>
+import Players from '@/components/team/Players.vue';</script>
