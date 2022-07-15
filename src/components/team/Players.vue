@@ -3,7 +3,7 @@
     <ul class="u-grid" role="list">
       <li v-for="player in players" :key="player.name"
           class="u-grid space-y-5 sm:space-x-5">
-        <CardPlayer :name="player.name"/>
+        <CardPlayer :player="player"/>
       </li>
     </ul>
   </div>
