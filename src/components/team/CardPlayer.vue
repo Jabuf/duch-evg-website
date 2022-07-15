@@ -57,8 +57,10 @@
     </div>
     <div v-else>
       <dl class="divide-y divide-gray-200">
+        <div>
+          <StarScore :player-name="player.name" :scores="player.scores"/>
+        </div>
         <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-          <StarScore :score="player.scores"/>
           <dt class="flex items-center text-sm font-medium text-gray-500">
             <UIcon :path="mdiTrophy"/>
             Palmarès
