@@ -1,6 +1,6 @@
 <template>
   <section>
-    <Welcome class="sm:px-20"/>
+    <Welcome/>
   </section>
 </template>
 
