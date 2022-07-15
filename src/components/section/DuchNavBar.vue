@@ -22,10 +22,11 @@
           </div>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
-              <a v-for="item in navigation" :key="item.name" :aria-current="item.current ? 'page' : undefined"
-                 :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']"
-                 :href="item.href"
-                 @click="setCurrent(item.href)">{{ item.name }}</a>
+              <router-link v-for="item in navigation" :key="item.name" :aria-current="item.current ? 'page' : undefined"
+                           :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']"
+                           :to="item"
+                           @click="setCurrent(item.href)">{{ item.name }}
+              </router-link>
             </div>
           </div>
         </div>
@@ -33,12 +34,11 @@
     </div>
     <DisclosurePanel class="sm:hidden bg-white">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <DisclosureButton v-for="item in navigation" :key="item.name" :aria-current="item.current ? 'page' : undefined"
-                          :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']"
-                          :href="item.href"
-                          as="a"
-                          @click="setCurrent(item.href)">{{ item.name }}
-        </DisclosureButton>
+        <router-link v-for="item in navigation" :key="item.name" :aria-current="item.current ? 'page' : undefined"
+                     :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']"
+                     :to="item"
+                     @click="setCurrent(item.href)">{{ item.name }}
+        </router-link>
       </div>
     </DisclosurePanel>
   </Disclosure>
@@ -49,10 +49,10 @@ import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue'
 import {MenuIcon, XIcon} from '@heroicons/vue/outline'
 
 const navigation = [
-  {name: 'Accueil', href: '/', current: true},
-  {name: 'Photos', href: '/photos', current: false},
-  {name: 'Boyage', href: '/boyage', current: false},
-  {name: 'L\'équipe', href: '/equipe', current: false}
+  {label: 'Accueil', name: 'Home', current: true},
+  {label: 'Photos', name: 'Pictures', current: false},
+  {label: 'Boyage', name: 'Boyage', current: false},
+  {label: 'L\'équipe', name: 'Team', current: false}
 ]
 
 setCurrent(window.location.pathname)
