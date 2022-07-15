@@ -55,10 +55,10 @@ import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue'
 import {MenuIcon, XIcon} from '@heroicons/vue/outline'
 
 const navigation = [
-  {label: 'Accueil', name: 'Home', current: true},
-  {label: 'Photos', name: 'Pictures', current: false},
+  {label: 'Accueil', name: 'Accueil', current: true},
+  {label: 'Photos', name: 'Photos', current: false},
   {label: 'Boyage', name: 'Boyage', current: false},
-  {label: 'L\'équipe', name: 'Team', current: false}
+  {label: 'L\'équipe', name: 'L\'équipe', current: false}
 ]
 
 const state = reactive({navigation})
