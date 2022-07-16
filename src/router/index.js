@@ -26,7 +26,7 @@ const routes = [
     component: Team
   },
   {
-    path: '*',
+    path: '/:pathMatch(.*)*',
     name: 'Accueil',
     component: Home
   }
