@@ -24,6 +24,11 @@ const routes = [
     path: '/equipe',
     name: "L'équipe",
     component: Team
+  },
+  {
+    path: '*',
+    name: 'Accueil',
+    component: Home
   }
 ]
 
