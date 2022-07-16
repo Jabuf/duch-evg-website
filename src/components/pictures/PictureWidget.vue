@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center py-10 cursor-pointer">
+  <div class="flex justify-center py-10">
     <img :alt="props.name" :src="`/old/${props.name}.jpg`">
   </div>
 </template>
