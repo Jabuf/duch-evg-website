@@ -71,7 +71,7 @@ const config = {
 }
 
 onMounted(() => {
-  const myChart = new Chart(
+  new Chart(
       document.getElementById(props.playerName),
       config
   )
