@@ -15,11 +15,13 @@
         <label class="u-label">Name
         </label>
         <input :id="placeNumber" v-model="state.review.reviewer" class="u-input" type="text"/>
+        <p v-if="!state.reviewerValid" id="error" class="form-error">Mets ton nom connard!</p>
       </div>
       <div>
         <label class="u-label mt-1">Review
         </label>
         <textarea v-model="state.review.text" class="u-input" rows="4" type="text"/>
+        <p v-if="!state.textValid" id="error" class="form-error">Mets un commentaire connard!</p>
       </div>
       <div>
         <button class="u-button u-button--primary" type="button"
@@ -46,9 +48,18 @@ const props = defineProps({
   }
 })
 
-const state = reactive({review: {reviewer: '', text: '', placeNumber: props.placeNumber}})
+const state = reactive({
+  review: {reviewer: '', text: '', placeNumber: props.placeNumber},
+  reviewerValid: true,
+  textValid: true
+})
 
 function postReview() {
+  state.reviewerValid = !(state.review.reviewer.length === 0)
+  state.textValid = !(state.review.text.length === 0)
+  if (!state.reviewerValid || !state.textValid) {
+    return
+  }
   const now = new Date()
   state.review.date = now.toLocaleDateString() + ' ' + now.toLocaleTimeString()
   store.reviews.push(JSON.parse(JSON.stringify(state.review)))
