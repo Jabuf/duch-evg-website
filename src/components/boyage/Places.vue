@@ -1,17 +1,10 @@
 <template>
-  <Place v-for="place in places" :place="place"/>
+  <div class="mt-5">
+    <Place v-for="place in places" :place="place"/>
+  </div>
 </template>
 
 <script setup>
 
 import Place from '@/components/boyage/Place.vue'
-
-const places = [{
-  name: 'Le pont Dom Louis',
-  order: 1
-},
-  {
-    name: 'La Cathédrale Sé',
-    order: 2
-  }]
-</script>
+import {places} from '@/data/places.js';</script>

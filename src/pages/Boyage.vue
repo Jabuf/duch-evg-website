@@ -1,7 +1,7 @@
 <template>
   <section>
-    <Map/>
     <Places/>
+    <Map/>
   </section>
 </template>
 
