@@ -15,7 +15,7 @@
 /* PRIMARY */
 
 .u-button--primary {
-    @apply bg-primary-500;
+    @apply bg-gray-700;
 }
 
 .u-button--primary:hover {
