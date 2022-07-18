@@ -23,8 +23,19 @@
     <p>Profite bien de ces moments magiques, les 3 ptits loups, les JC, la dream team et le PhiD, tout rassemblé !</p>
     <p>Papa</p>
   </div>
-  <PicturesWidget/>
+  <PictureWidget :name="''+state.pictureNumber"/>
 </template>
 
 <script setup>
-import PicturesWidget from '@/components/pictures/PicturesWidget.vue';</script>
+import {onMounted, reactive} from 'vue'
+import {getRandomNumber} from '@/utils/math.js'
+import PictureWidget from '@/components/pictures/PictureWidget.vue'
+
+const state = reactive({pictureNumber: getRandomNumber(1, 14)})
+
+onMounted(() => {
+  window.setInterval(() => {
+    state.pictureNumber = getRandomNumber(1, 14)
+  }, 5000)
+})
+</script>
