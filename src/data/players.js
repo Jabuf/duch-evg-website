@@ -13,7 +13,7 @@ export const players = [
       'médaille de bronze du dos en carton 2019'
     ],
     talent:
-      'L’homme au physique de panda a de la gouaille. Une chose est sûr on peut pas le rater en soirée. Il avancera sûrement avoir la plus grosse consommation de la soirée. Attention aux velléités de bagarre en fin de soirée. ',
+      "L'homme au physique de panda a de la gouaille. Une chose est sûr on peut pas le rater en soirée. Il avancera sûrement avoir la plus grosse consommation de la soirée. Attention aux velléités de bagarre en fin de soirée. ",
     scores: {
       liche: '5',
       bringue: '4',
@@ -32,13 +32,13 @@ export const players = [
       'vendéen  ',
       'tour des caves de 2003 / 2005 ',
       'fête du beaujolais 2005',
-      'tour d Europe de la bière 2009',
+      "tour d'Europe de la bière 2009",
       'semi Barathon de Nantes 2011',
       'carte de fidélité « au vestiaire »',
       'buveur de mauresque depuis 2015'
     ],
     talent:
-      "Patoche les mains baladeuses a de grandes mains, et c'est pas pour attraper des ballons. Aussi habile avec des fesses qu avec des pintes. Muni d un grand tarin, il sait renifler les bons coups ou les bonnes quilles. Joueur infatigable, il fait souvent parti des derniers debout. Attention à la prise de confiance pouvant aller jusqu’à la pancréatite",
+      "Patoche les mains baladeuses a de grandes mains, et c'est pas pour attraper des ballons. Aussi habile avec des fesses qu'avec des pintes. Muni d'un grand tarin, il sait renifler les bons coups ou les bonnes quilles. Joueur infatigable, il fait souvent parti des derniers debout. Attention à la prise de confiance pouvant aller jusqu’à la pancréatite",
     scores: {
       liche: '5',
       bringue: '5',
@@ -52,7 +52,7 @@ export const players = [
     age: '35',
     poids: '77',
     taille: '1m80',
-    poste: '3 eme ligne aile',
+    poste: '3ème ligne aile',
     palmares: [
       'membre famille duchateam ',
       'sosie Roger federer (a l’époque) ',
@@ -61,7 +61,7 @@ export const players = [
       'a fait plusieurs aller retour de la rue de la soif'
     ],
     talent:
-      'Homme aussi littéraire que alcoolique. Il enchaîne les bouquins comme les bistrots. C’est à la tombée de la nuit que le iench qe révèle. Il grogne, il boit, il salive devant les chiennes. Attention à l’animal!',
+      "Homme aussi littéraire qu'alcoolique. Il enchaîne les bouquins comme les bistrots. C’est à la tombée de la nuit que le iench se révèle. Il grogne, il boit, il salive devant les chiennes. Attention à l’animal!",
     scores: {
       liche: '5',
       bringue: '4',
@@ -75,7 +75,7 @@ export const players = [
     age: '32',
     poids: '104',
     taille: '1m85',
-    poste: 'pilier ou 2 eme ligne ',
+    poste: 'pilier ou 2ème ligne ',
     palmares: [
       'médaille de bronze de cul sec de pinte 2010 ',
       'chie dans le dyson  ',
@@ -84,7 +84,7 @@ export const players = [
       'carrière la plus courte de sumo'
     ],
     talent:
-      'Homme aux multiples facettes tant bien physiquement que intellectuellement, il déroute les adversaires. Il aime le gras ( l’humour et la bouffe), Mais aussi le veau! Il est capable de tout ( comme laisser une crotte dans un manteau). Un homme à surveiller de près.',
+      'Homme aux multiples facettes tant bien physiquement que intellectuellement, il déroute les adversaires. Il aime le gras ( l’humour et la bouffe), mais aussi le veau! Il est capable de tout ( comme laisser une crotte dans un manteau). Un homme à surveiller de près.',
     scores: {
       liche: '4',
       bringue: '4',
@@ -147,7 +147,7 @@ export const players = [
     age: '35',
     poids: '75',
     taille: '1m80',
-    poste: 'troisième ligne centre ',
+    poste: '3ème ligne centre ',
     palmares: [
       'Bristol 2008 ',
       '3ème mi-temps beach rugby la tranche 2009-2013 ',
@@ -172,7 +172,7 @@ export const players = [
     poste: 'demi de mêlée ',
     palmares: [
       'a bu une bière avant l’an 2000 ',
-      'a acheté de l alcool en franc ',
+      "a acheté de l'alcool en franc ",
       'Hellfest de 2000 à 2022',
       'Mari d’Estelle '
     ],
@@ -195,8 +195,8 @@ export const players = [
     palmares: [
       ' fête du beaujolais 2005 ',
       'Vendéen',
-      'eme mi temps beach rugby la tranche sur mer 2009 - 2012',
-      'tour d Europe de la bière 2009',
+      '3ème mi temps beach rugby la tranche sur mer 2009 - 2012',
+      "tour d'Europe de la bière 2009",
       'participation championnat mangeur hot dog canadien depuis 2016'
     ],
     talent:
@@ -214,7 +214,7 @@ export const players = [
     age: '34',
     poids: '78',
     taille: '1m83',
-    poste: 'troisième ligne aile ',
+    poste: '3ème ligne aile ',
     palmares: [
       'Bristol 2008 2010 2012 ',
       '3ème mi temps beach rugby 2008 - 2013  ',
@@ -237,7 +237,7 @@ export const players = [
     age: '34',
     poids: '80',
     taille: '1m89',
-    poste: '2eme ligne et responsable logistique ',
+    poste: '2ème ligne et responsable logistique ',
     palmares: [
       "fondateur du mouvement : « c'est Marseille bébé »  ",
       'buveur de jaune depuis 2005 ',
@@ -315,7 +315,7 @@ export const players = [
       'calvitie on the rocks 2018 (invité d’honneur)'
     ],
     talent:
-      'Une aptitude certaine dés le plus jeune âge pour enchaîner les canons. Ce cubis de science a autant de capacité à boire que ses golfs sont profonds. Passez un certain seuil, il sort sa trompe et se prends pour un ventilateur ! Comme les autres petits modèles du groupe, tendance à la bagarre !',
+      'Une aptitude certaine dès le plus jeune âge pour enchaîner les canons. Ce cubis de science a autant de capacité à boire que ses golfs sont profonds. Passé un certain seuil, il sort sa trompe et se prend pour un ventilateur ! Comme les autres petits modèles du groupe, tendance à la bagarre !',
     scores: {
       liche: '5',
       bringue: '5',
@@ -335,10 +335,10 @@ export const players = [
       'dort sur les genoux des clodos ',
       'pisse dans le placard et Vomi dans le sanibroyeur ',
       'sert la main aux enfants de ses conquêtes',
-      'buveur d Anjou depuis 2014'
+      "buveur d'Anjou depuis 2014"
     ],
     talent:
-      "Ne pas se fier à son physique de minus, c'est une vrai teigne, voir bagarreur. C est un homme des grands matchs, où il fait jamais dans la dentelle. Ses yeux grossissent avec l’alcool.",
+      "Ne pas se fier à son physique de minus, c'est une vrai teigne, voir bagarreur. C'est un homme des grands matchs, où il fait jamais dans la dentelle. Ses yeux grossissent avec l’alcool.",
     scores: {
       liche: '3',
       bringue: '3',
